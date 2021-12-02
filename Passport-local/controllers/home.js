@@ -1,11 +1,9 @@
 const express = require('express');
 
 const homeGet = (req, res, next) => {
-    if (req.isAuthenticated()) {
-        res.render("home");
-    } else {
-        res.redirect("/");
-    }
-
+    res.render("home");
 }
-module.exports = { homeGet };
+const homeAdminGet = (req, res, next) => {
+    res.render("homeAdmin");
+}
+module.exports = { homeGet, homeAdminGet };

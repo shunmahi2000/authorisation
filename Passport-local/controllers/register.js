@@ -26,7 +26,8 @@ const registerPost = (req, res, next) => {
     const newUser = new User({
         username: req.body.email,
         hash: hash,
-        salt: salt
+        salt: salt,
+        admin: false
     })
     newUser.save().then((user) => {
         console.log(user);
